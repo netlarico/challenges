@@ -1,0 +1,227 @@
+:root {
+  --primary-font: 'Manrope';
+
+  --primary-color: #48556a;
+  --secondary-color: #6d7f97;
+  --tertiary-color: #9eafc2;
+  --quaternary-color: #ecf2f8;
+}
+body {
+  background-color: var(--quaternary-color);
+  font-family: var(--primary-font);
+}
+
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  padding: 1rem;
+
+  @media (min-width: 1024px) {
+    padding: 4rem;
+  }
+}
+
+.article-card {
+  max-width: 327px;
+  margin: auto;
+  border-radius: 0.625rem;
+
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+  .featured-image {
+    border-top-left-radius: 0.625rem;
+    border-top-right-radius: 0.625rem;
+    object-fit: cover;
+    display: block;
+    width: 100%;
+  }
+
+  .col-right {
+    background-color: #fff;
+
+    border-bottom-right-radius: 0.625rem;
+    border-bottom-left-radius: 0.625rem;
+  }
+
+  .description {
+    transition: all 0.3s ease-in-out;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    padding: 2rem;
+    padding-bottom: 0.5rem;
+    h3 {
+      color: var(--primary-color);
+      font-weight: 700;
+      margin-top: 0;
+      font-size: 1rem;
+    }
+    p {
+      color: var(--secondary-color);
+      line-height: 1.8;
+    }
+  }
+
+  .author {
+    background-color: #fff;
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-size: 0.8125rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border-bottom-right-radius: 0.625rem;
+    border-bottom-left-radius: 0.625rem;
+    .circle {
+      max-width: 100%;
+      margin-right: 1rem;
+      border-radius: 100%;
+    }
+    .info {
+      margin-right: auto;
+      .date {
+        display: block;
+        color: var(--tertiary-color);
+        font-size: 0.75rem;
+      }
+    }
+  }
+
+  .btn-area {
+    margin-left: auto;
+    &:hover {
+      .share-info {
+        height: 100%;
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  .share {
+    transition: all 0.3s ease-in-out;
+    color: var(--secondary-color, #2ab7ca);
+    position: relative;
+    width: 32px;
+    height: 32px;
+    border-width: 0;
+    z-index: 10;
+    border-width: 0;
+    border-radius: 100%;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+
+    svg {
+      fill: currentColor;
+    }
+  }
+
+  .share-info {
+    transition: all 0.3s ease-in-out;
+    background-color: var(--primary-color, #3153d8);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    bottom: 0;
+    left: 0;
+    height: 0;
+    border-bottom-right-radius: 0.625rem;
+    border-bottom-left-radius: 0.625rem;
+    opacity: 0;
+    width: 100%;
+    visibility: hidden;
+
+    ul {
+      color: var(--tertiary-color, #fed766);
+
+      display: flex;
+      align-items: center;
+      font-size: var(--font-12, 0.75rem);
+      letter-spacing: 0.25rem;
+      margin: 0;
+      padding: 0;
+      padding-left: 2rem;
+      list-style: none;
+      li {
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    max-width: 730px;
+    display: flex;
+    .col-right {
+      padding-left: 1rem;
+      padding-right: 1rem;
+      border-top-right-radius: 0.625rem;
+      border-bottom-right-radius: 0.625rem;
+    }
+
+    .featured-image {
+      border-radius: 0;
+      border-top-left-radius: 0.625rem;
+      border-bottom-left-radius: 0.625rem;
+      height: 100%;
+    }
+
+    .description {
+      h3 {
+        font-size: 20px;
+      }
+    }
+
+    .btn-area {
+      position: relative;
+      &:hover {
+        .share-info {
+          bottom: 50px;
+        }
+      }
+    }
+
+    .share-info {
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-radius: 0.625rem;
+      width: fit-content;
+
+      left: 50%;
+      transform: translateX(-50%);
+
+      bottom: 40px;
+
+      &:after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 10px 10px 0 10px;
+        border-color: var(--primary-color) transparent transparent transparent;
+        position: absolute;
+        left: 50%;
+        margin-left: -10px;
+        bottom: -10px;
+      }
+    }
+  }
+}
+
+.attribution {
+  text-align: center;
+  font-size: 0.75rem;
+  margin-top: 30px;
+  a {
+    color: inheit;
+  }
+}
